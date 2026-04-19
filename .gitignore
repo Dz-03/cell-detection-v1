@@ -1,0 +1,13 @@
+/.env
+cell-detection.yolov8/
+cell_images/
+cell_images_jpg/
+cell_tiles/
+data/
+dataset/
+runs/
+*.pt
+*.cache
+*.tmp
+*.log
+logs/
