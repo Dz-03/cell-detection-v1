@@ -60,8 +60,7 @@ def main():
             fliplr=0.5,
             mosaic=1.0,
             mixup=0.1,
-            copy_paste=0.1,
-
+           
             # Цветовые
             hsv_h=0.01,
             hsv_s=0.5,
