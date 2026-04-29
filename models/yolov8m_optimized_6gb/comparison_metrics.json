@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T01:38:19.531049",
+  "config": {
+    "name": "yolov8m_optimized_6gb",
+    "model": "yolov8m",
+    "epochs": 200,
+    "batch": 8,
+    "imgsz": 960,
+    "augmentations": {
+      "degrees": 20.0,
+      "translate": 0.2,
+      "scale": 0.8,
+      "shear": 5.0,
+      "perspective": 0.0003,
+      "flipud": 0.5,
+      "fliplr": 0.5,
+      "mosaic": 1.0,
+      "mixup": 0.1,
+      "copy_paste": 0.2,
+      "hsv_h": 0.015,
+      "hsv_s": 0.7,
+      "hsv_v": 0.4,
+      "erasing": 0.3
+    },
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "lrf": 0.01,
+    "momentum": 0.937,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 3.0,
+    "warmup_momentum": 0.8,
+    "warmup_bias_lr": 0.1,
+    "box": 7.5,
+    "cls": 0.5,
+    "dfl": 1.5,
+    "close_mosaic": 15
+  },
+  "metrics": {
+    "mAP50": 0.8291482843349685,
+    "mAP50_95": 0.4455687672187856,
+    "precision": 0.7749337703078226,
+    "recall": 0.7629310344827587,
+    "f1_score": 0.7793595209387386,
+    "final_train_loss": 1.39257,
+    "final_val_loss": 1.62885,
+    "overfit_gap": 0.23627999999999982,
+    "training_time_minutes": 43.34594488333333,
+    "epochs_trained": 200,
+    "best_epoch": 195
+  },
+  "convergence": {
+    "best_f1_epoch": 197,
+    "early_stopped": false
+  }
+}
