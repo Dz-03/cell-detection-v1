@@ -11,3 +11,4 @@ runs/
 *.tmp
 *.log
 logs/
+.idea
