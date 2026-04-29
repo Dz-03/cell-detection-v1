@@ -221,7 +221,7 @@ def main():
         'name': 'yolov8m_optimized_6gb',
         'model': 'yolov8m',  # Medium (25M параметров) вместо X (68M)
         'epochs': 200,  # Уменьшили с 300
-        'batch': 8,  # Критично! 16 не поместится
+        'batch': 8,  #  16 не поместится
         'imgsz': 960,  # Уменьшили с 1280 (оптимальный баланс)
 
         # Аугментации (немного урезанные)
@@ -367,7 +367,7 @@ def main():
                 print(f"   Проверьте содержимое runs/train/")
                 return
 
-        print(f"\n📁 Папка с результатами: {save_dir}")
+        print(f"\n Папка с результатами: {save_dir}")
 
         # Проверяем наличие best.pt
         best_model_path = save_dir / 'weights' / 'best.pt'
@@ -380,7 +380,7 @@ def main():
             return
 
         # Валидация
-        print("\n⏳ Валидация лучшей модели...")
+        print("\n Валидация лучшей модели...")
         best_model = YOLO(best_model_path)
         metrics = best_model.val(
             data=str(data_yaml),
@@ -410,7 +410,7 @@ def main():
             print(f"  Файл results.csv не найден: {results_csv}")
 
         print("\n" + "=" * 70)
-        print("✅ ГОТОВО! Оптимизированная модель обучена")
+        print(" ГОТОВО! Оптимизированная модель обучена")
         print("=" * 70)
 
         print(f"\n Ожидаемые результаты:")
