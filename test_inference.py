@@ -9,7 +9,7 @@ def test_model():
     print("=" * 60 + "\n")
 
     # Находим модель
-    models = glob.glob('models/best.pt', recursive=True)
+    models = glob.glob('models/yolov8m_optimized_6gb/weights/best.pt', recursive=True)
     if not models:
         print(" Модель не найдена!")
         return
