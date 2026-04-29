@@ -135,7 +135,7 @@ def test_model():
 
     # 3. Сохранение в TXT (YOLO формат)
     txt_dir = output_dir / 'labels'
-    txt_dir.mkdir(parents=True, exist_ok=True)  # ← И здесь тоже
+    txt_dir.mkdir(parents=True, exist_ok=True) 
 
     # Группируем по изображениям
     from collections import defaultdict
@@ -185,7 +185,7 @@ def test_model():
     # ВЫВОД ТАБЛИЦЫ (первые 10 детекций)
     # ==========================================
     if all_detections:
-        print("📋 Первые 10 детекций (таблица):\n")
+        print(" Первые 10 детекций (таблица):\n")
         df_display = df[['image', 'object_id', 'class', 'confidence', 'x1', 'y1', 'x2', 'y2']].head(10)
         print(df_display.to_string(index=False))
         print("\n" + "=" * 60 + "\n")
