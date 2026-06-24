@@ -27,23 +27,22 @@ def test_model():
     model = YOLO(model_path)
 
     
-    # Поиск изображений
-    img = Image.open("C:\\") # нужно добавить путь
+   test_images = list(Path((input("Enter image path..."))).glob('*.jpg'))
 
-    if not img:
-        img = list(Path('cell-detection.yolov8/train/images').glob('*.jpg'))[:20]
+    if not test_images:
+        test_images = list(Path('cell-detection.yolov8/train/images').glob('*.jpg'))[:20]
 
-    if not img:
+    if not test_images:
         print(" Изображения не найдены!")
         return
 
-    print(f"🖼  Найдено изображений для теста: {len(img)}\n")
+    print(f"🖼  Найдено изображений для теста: {len(test_images)}\n")
 
     # Детекция
     print("⏳ Запуск детекции...\n")
 
     results = model.predict(
-        source=img[:20],
+        source=test_images[:20],
         save=True,
         conf=0.25,  # Порог уверенности
         iou=0.45,
@@ -188,3 +187,5 @@ def test_model():
 
 if __name__ == '__main__':
     detections = test_model()
+    
+input("Нажмите Enter, чтобы выйти...")
