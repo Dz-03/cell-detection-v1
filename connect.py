@@ -26,31 +26,24 @@ def test_model():
     # Загружаем
     model = YOLO(model_path)
 
-
-
-    # Задаём папку (нужно прописать название папки)
-    INCOMING_DIR = Path(r"C:\Users\Имя\папка")
-
-    # Проверяем, существует ли папка
-    if not INCOMING_DIR.exists():
-        print(f"Предупреждение: папка {INCOMING_DIR} не найдена")
-    # Находим тестовые изображения
-    test_images = list(INCOMING_DIR.glob('*.jpg'))
     
-    if not test_images:
-        test_images = list(Path('cell-detection.yolov8/train/images').glob('*.jpg'))[:20]
+    # Поиск изображений
+    img = Image.open("C:\\") # нужно добавить путь
 
-    if not test_images:
+    if not img:
+        img = list(Path('cell-detection.yolov8/train/images').glob('*.jpg'))[:20]
+
+    if not img:
         print(" Изображения не найдены!")
         return
 
-    print(f"🖼  Найдено изображений для теста: {len(test_images)}\n")
+    print(f"🖼  Найдено изображений для теста: {len(img)}\n")
 
     # Детекция
     print("⏳ Запуск детекции...\n")
 
     results = model.predict(
-        source=test_images[:20],
+        source=img[:20],
         save=True,
         conf=0.25,  # Порог уверенности
         iou=0.45,
