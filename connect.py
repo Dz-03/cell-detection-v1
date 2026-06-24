@@ -26,9 +26,17 @@ def test_model():
     # Загружаем
     model = YOLO(model_path)
 
-    # Находим тестовые изображения
-    test_images = INCOMING_DIR =Path( ##### нужно заменить нав название папки, в которую будут сохранятся изображения'cell_images_jpg').glob('*.jpg'))
 
+
+    # Задаём папку (нужно прописать название папки)
+    INCOMING_DIR = Path(r"C:\Users\Имя\папка")
+
+    # Проверяем, существует ли папка
+    if not INCOMING_DIR.exists():
+        print(f"Предупреждение: папка {INCOMING_DIR} не найдена")
+    # Находим тестовые изображения
+    test_images = list(INCOMING_DIR.glob('*.jpg'))
+    
     if not test_images:
         test_images = list(Path('cell-detection.yolov8/train/images').glob('*.jpg'))[:20]
 
