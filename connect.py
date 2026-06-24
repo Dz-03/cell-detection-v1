@@ -91,9 +91,6 @@ def test_model():
 
             # Сохраняем для JSON/CSV
             detection = {
-                'image': img_name,
-                'image_width': img_width,
-                'image_height': img_height,
                 'object_id': j + 1,
                 'class': class_name,
                 'confidence': round(conf, 4),
