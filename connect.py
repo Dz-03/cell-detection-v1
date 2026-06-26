@@ -21,7 +21,7 @@ def test_model():
         return
 
     model_path = max(models, key=lambda p: Path(p).stat().st_mtime)
-    print(f"✓ Модель: {model_path}\n")
+    print(f" Модель: {model_path}\n")
 
     # Загружаем
     model = YOLO(model_path)
