@@ -36,10 +36,10 @@ def test_model():
         print(" Изображения не найдены!")
         return
 
-    print(f"🖼  Найдено изображений для теста: {len(test_images)}\n")
+    print(f"  Найдено изображений для теста: {len(test_images)}\n")
 
     # Детекция
-    print("⏳ Запуск детекции...\n")
+    print(" Запуск детекции...\n")
 
     results = model.predict(
         source=test_images[:20],
